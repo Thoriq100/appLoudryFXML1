@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="563.0" prefWidth="1095.0" styleClass="head-background" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loundry_app.HomeController">
+   <children>
+      <HBox alignment="TOP_RIGHT" layoutX="-3.0" onMouseDragged="#drag" onMousePressed="#press" prefHeight="32.0" prefWidth="1101.0" style="-fx-background-color: black;">
+         <children>
+            <Label fx:id="usersession" prefHeight="27.0" prefWidth="154.0" text="Admin" textFill="#fcf7f7">
+               <HBox.margin>
+                  <Insets right="60.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="32.0" fitWidth="32.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/close/icons8-exit-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="exit_btn" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/close/icons8-close-window-48.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="home_pane" layoutX="-1.0" layoutY="32.0" prefHeight="532.0" prefWidth="1037.0" styleClass="head-background">
+         <children>
+            <Label layoutX="14.0" layoutY="6.0" prefHeight="32.0" prefWidth="94.0" text="HOME" underline="true">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <HBox layoutX="61.0" layoutY="76.0" prefHeight="189.0" prefWidth="405.0">
+               <children>
+                  <Pane prefHeight="189.0" prefWidth="206.0" styleClass="textfield" stylesheets="@Style.css">
+                     <children>
+                        <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="43.0" prefWidth="205.0" style="-fx-background-color: #72d3fe;" text="Total Customer">
+                           <font>
+                              <Font name="Baskerville Old Face" size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" layoutX="43.0" layoutY="51.0" prefHeight="128.0" prefWidth="128.0" stylesheets="@Style.css">
+                           <children>
+                              <Pane prefHeight="146.0" prefWidth="203.0">
+                                 <children>
+                                    <TextField fx:id="coba" alignment="CENTER" editable="false" layoutX="10.0" layoutY="39.0" prefHeight="51.0" prefWidth="109.0" promptText="123456" style="-fx-background-color: tranparent;" styleClass="ttl" stylesheets="@Style.css">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </TextField>
+                                    <ProgressIndicator fx:id="cust_prog" layoutX="-48.0" layoutY="-6.0" prefHeight="141.0" prefWidth="224.0" progress="0.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children></AnchorPane>
+      <AnchorPane fx:id="view_pane" layoutX="-1.0" layoutY="33.0" onDragDetected="#handlebutton" prefHeight="532.0" prefWidth="1026.0" styleClass="head-background" stylesheets="@Style.css" visible="false">
+         <children>
+            <Label layoutX="29.0" layoutY="1.0" prefHeight="32.0" prefWidth="94.0" text="VIEW" underline="true">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableCustomer" layoutX="29.0" layoutY="47.0" prefHeight="462.0" prefWidth="723.0">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="103.0" text="ID" />
+                <TableColumn fx:id="nama" prefWidth="214.99998474121094" text="Nama Lengkap" />
+                  <TableColumn fx:id="alamat" prefWidth="206.0" text="Alamat" />
+                  <TableColumn fx:id="notelfon" prefWidth="197.0" text="No Telefon" />
+              </columns>
+            </TableView>
+            <VBox layoutX="764.0" layoutY="22.0" prefHeight="288.0" prefWidth="215.0">
+               <children>
+                  <Label text="Add Customer" underline="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="nama_tf1" alignment="CENTER" focusColor="WHITE" labelFloat="true" prefHeight="25.0" prefWidth="191.0" promptText="Nama Lengkap" unFocusColor="#1d1d1e">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="alamat_tf1" alignment="CENTER" focusColor="WHITE" labelFloat="true" prefHeight="25.0" prefWidth="191.0" promptText="Alamat" unFocusColor="#1d1d1e">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="notlp_tf1" alignment="CENTER" focusColor="WHITE" labelFloat="true" prefHeight="25.0" prefWidth="191.0" promptText="No Telfon" unFocusColor="#1d1d1e">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <Label text="Edit Customer" underline="true">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comboisi" onAction="#combo_update" prefHeight="25.0" prefWidth="218.0" promptText="Pilih Tabel" stylesheets="@Style.css">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="textfield" />
+                        <String fx:value="buttons" />
+                        <String fx:value="Menu" />
+                     </styleClass>
+                  </ComboBox>
+                  <JFXTextField fx:id="id_update1" alignment="CENTER" focusColor="WHITE" labelFloat="true" prefHeight="25.0" prefWidth="191.0" promptText="ID Customer" unFocusColor="#1d1d1e">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="input_tf1" alignment="CENTER" focusColor="WHITE" labelFloat="true" prefHeight="25.0" prefWidth="191.0" promptText="Input Perubahan" unFocusColor="#1d1d1e">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <JFXDrawer fx:id="drawer" alignment="TOP_CENTER" defaultDrawerSize="222.0" prefHeight="565.0" prefWidth="224.0" visible="false">
+         <children>
+            <VBox fx:id="box" alignment="TOP_CENTER" prefHeight="559.0" prefWidth="224.0" styleClass="head-background" stylesheets="@Style.css">
+               <children>
+                  <ImageView fitHeight="255.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/skin/orangebaru.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <JFXButton fx:id="home_btn1" graphicTextGap="5.0" onAction="#handlebutton" prefHeight="54.0" prefWidth="226.0" style="-fx-background-color: transparent;" styleClass="Menu" stylesheets="@Style.css" text="HOME" textFill="#fff7f7">
+                     <font>
+                        <Font name="Baskerville Old Face" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-home-page-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="35.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="view_btn1" graphicTextGap="5.0" onAction="#handlebutton" prefHeight="54.0" prefWidth="224.0" style="-fx-background-color: transparent;" styleClass="Menu" stylesheets="@Style.css" text="VIEW" textFill="#fff7f7">
+                     <font>
+                        <Font name="Baskerville Old Face" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-person-at-home-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="stock_btn1" graphicTextGap="5.0" onAction="#handlebutton" prefHeight="54.0" prefWidth="224.0" style="-fx-background-color: transparent;" styleClass="Menu" stylesheets="@Style.css" text="STOCK" textFill="#fff7f7">
+                     <font>
+                        <Font name="Baskerville Old Face" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-box-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="30.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="paket_btn" graphicTextGap="5.0" onAction="#handlebutton" prefHeight="54.0" prefWidth="224.0" style="-fx-background-color: transparent;" styleClass="Menu" stylesheets="@Style.css" text="PAKET" textFill="#fff7f7">
+                     <font>
+                        <Font name="Baskerville Old Face" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-rent-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="30.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="transaksi_btn" graphicTextGap="0.0" onAction="#handlebutton" prefHeight="54.0" prefWidth="224.0" style="-fx-background-color: transparent;" styleClass="Menu" stylesheets="@Style.css" text="TRANSAKSI" textFill="#fff7f7">
+                     <font>
+                        <Font name="Baskerville Old Face" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="43.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-bill-50(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </JFXDrawer>
+      <JFXHamburger fx:id="humberger" layoutX="1054.0" layoutY="52.0" />
+      <ImageView fx:id="rfsh_btn" fitHeight="40.0" fitWidth="40.0" layoutX="1049.0" layoutY="83.0" onMouseClicked="#refesh" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/close/icons8-sync-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="tmbh_btn" fitHeight="38.0" fitWidth="38.0" layoutX="1049.0" layoutY="129.0" onMouseClicked="#tambahbtn" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/close/icons8-add-filled-50.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="tmbh_btn1" fitHeight="38.0" fitWidth="38.0" layoutX="1049.0" layoutY="179.0" onMouseClicked="#edit_btn" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-edit-file-filled-48.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

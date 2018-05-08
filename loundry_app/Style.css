@@ -1,0 +1,59 @@
+.textfield{
+    -fx-background-color: rgba(45,45,43,0.6);
+    -fx-cursor-color:white;
+    -fx-text-fill: #ffffff;
+   
+}
+.buttons{
+    -fx-background-color: #00b300;
+    -fx-background-radius: 32px;
+    -fx-text-fill: #ffffff;
+}
+.buttons:hover{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 3px;
+    -fx-text-fill: #42E24F;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 3px;
+    -fx-border-style: solid;
+    -fx-border-width: 3px;
+    
+    
+    
+}
+.exit{
+      -fx-background-color: #3D4959;
+}
+.head-background
+{
+    -fx-background-color: linear-gradient(to left,#ff5800 , #ff8000);
+}
+.Menu:link{
+    background:grey;
+    color: yellow; 
+}
+.Menu:visited{
+    background: black;
+}
+.Menu:hover{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 3px;
+    -fx-text-fill: #42E24F;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 3px;
+    -fx-border-style: solid;
+    -fx-border-width: 3px;
+}
+.Menu:active{ 
+ background: black;
+}
+
+.round-box{
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+    -fx-border-width: 5px;
+    
+}
+.ttl{
+    -fx-text-fill:  #72d3fe;
+}
